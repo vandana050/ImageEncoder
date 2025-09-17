@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Image Stego — Demo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Image Stego — LSB Encoder / Decoder</h1>
+
+    <section class="card">
+      <h2>1) Load cover image</h2>
+      <input id="fileInput" type="file" accept="image/*" />
+      <canvas id="canvas" style="display:none"></canvas>
+      <div id="previewWrap"></div>
+    </section>
+
+    <section class="card">
+      <h2>2) Embed message</h2>
+      <textarea id="message" rows="4" placeholder="Type message to hide..."></textarea>
+      <div class="row">
+        <button id="embedBtn">Embed & Download Stego Image</button>
+        <button id="clearBtn">Clear</button>
+      </div>
+      <p class="note">Max message length depends on image size. This demo uses 1 bit per color channel per pixel.</p>
+    </section>
+
+    <section class="card">
+      <h2>3) Decode message</h2>
+      <input id="stegoFile" type="file" accept="image/*" />
+      <div class="row">
+        <button id="decodeBtn">Decode</button>
+      </div>
+      <pre id="decoded" class="decodedArea"></pre>
+    </section>
+
+    
+  </main>
+
+  <script src="stego.js"></script>
+</body>
+</html>
